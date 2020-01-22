@@ -2,6 +2,13 @@ import React from 'react';
 
 import { connect } from 'react-redux';
 
+const mapStateToProps = state => {
+  return {
+    price: state.carReducer.car.price,
+    additionalPrice: state.priceReducer.additionalPrice
+  }
+}
+
 const Total = props => {
   console.log(props)
   return (
@@ -12,11 +19,6 @@ const Total = props => {
 };
 
 export default connect(
-  state => {
-    return {
-      price: state.carReducer.car.price,
-      additionalPrice: state.priceReducer.additionalPrice
-    }
-  }, {}
+  mapStateToProps, {}
 )
   (Total);

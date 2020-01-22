@@ -3,6 +3,12 @@ import AdditionalFeature from './AdditionalFeature';
 
 import { connect } from 'react-redux';
 
+const mapStateToProps = state => {
+  return {
+    additionalFeatures: state.featuresReducer.additionalFeatures
+  }
+}
+
 const AdditionalFeatures = props => {
   return (
     <div className="content">
@@ -21,10 +27,6 @@ const AdditionalFeatures = props => {
 };
 
 export default connect(
-  state => {
-    return {
-      additionalFeatures: state.featuresReducer.additionalFeatures
-    }
-  },
+  mapStateToProps,
   {})
   (AdditionalFeatures);

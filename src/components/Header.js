@@ -2,14 +2,14 @@ import React from 'react';
 
 import { connect } from 'react-redux';
 
-// const mapStateToProps = state => {
-//   return {
-//     price: state.carReducer.car.price,
-//     name: state.carReducer.car.name,
-//     image: state.carReducer.car.image,
-//     features: state.carReducer.car.features,
-//   }
-// }
+const mapStateToProps = state => {
+  return {
+    price: state.carReducer.car.price,
+    name: state.carReducer.car.name,
+    image: state.carReducer.car.image,
+    features: state.carReducer.car.features,
+  }
+}
 
 const Header = props => {
   // console.log(props)
@@ -25,13 +25,6 @@ const Header = props => {
 };
 
 export default connect(
-  state => {
-    return {
-      price: state.carReducer.car.price,
-      name: state.carReducer.car.name,
-      image: state.carReducer.car.image,
-      // features: state.carReducer.car.features,
-    }
-  },
+  mapStateToProps,
   {})
   (Header);
