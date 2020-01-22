@@ -26,5 +26,5 @@ const Header = props => {
 
 export default connect(
   mapStateToProps,
-  {})
-  (Header);
+  {}
+  )(Header);

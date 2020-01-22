@@ -30,5 +30,5 @@ const AddedFeatures = props => {
 
 export default connect(
   mapStateToProps,
-  {})
-  (AddedFeatures);
+  {}
+  )(AddedFeatures);
