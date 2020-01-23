@@ -24,6 +24,9 @@ export const carReducer = (state = initialState, action) => {
     case 'add-features': {
       const selectedFeature = state.additionalFeatures.find(
         (feature) => feature.id === action.payload.id)
+
+      // const savedAdditional = [...state.additionalFeatures].filter(
+      //   (feature) => feature.id !== action.payload.id)
       return {
         ...state,
         additionalPrice: state.additionalPrice + selectedFeature.price,
@@ -35,7 +38,7 @@ export const carReducer = (state = initialState, action) => {
           ]
         },
         // additionalFeatures: [
-
+        //   ...savedAdditional
         // ]
       }
     }
@@ -43,13 +46,16 @@ export const carReducer = (state = initialState, action) => {
       const selectedFeature = state.additionalFeatures.find(
         (feature) => feature.id === action.payload.id);
 
+      const saved = [...state.car.features].filter(
+        (feature) => feature.id !== action.payload.id)
+
       return {
         ...state,
         additionalPrice: state.additionalPrice - selectedFeature.price,
         car: {
           ...state.car,
           features: [
-
+            ...saved
           ]
         }
       }
