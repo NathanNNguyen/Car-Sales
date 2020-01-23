@@ -17,7 +17,7 @@ const AdditionalFeatures = props => {
   const buyItem = item => {
     return {
       type: 'add-features',
-      payload: item
+      payload: item.id
     }
   };
 
@@ -27,7 +27,11 @@ const AdditionalFeatures = props => {
       {props.additionalFeatures.length ? (
         <ol type="1">
           {props.additionalFeatures.map(item => (
-            <AdditionalFeature key={item.id} feature={item} addFeatures={props.addFeatures} buyItem={buyItem}/>
+            <AdditionalFeature
+              key={item.id}
+              feature={item}
+              addFeatures={props.addFeatures}
+              buyItem={buyItem} />
           ))}
         </ol>
       ) : (

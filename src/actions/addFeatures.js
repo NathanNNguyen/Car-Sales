@@ -1,6 +1,6 @@
-export const addFeatures = id => {
+export const addFeatures = feature => {
   return {
     type: 'add-features',
-    payload: id
+    payload: feature
   }
 }
